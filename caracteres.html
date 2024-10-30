@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Separador de Caracteres</title>
+	<script type="text/javascript">
+		function separaCaracter(){
+			// captura o caracter digitado
+			var caracter = document.getElementById("entrada"). value;
+			// limpar o campo de entrada 
+			document.getElementById("entrada"). value = "";
+			// tira o espaço
+			caracter.trim();
+			switch (caracter){ 
+				case '0' : 
+				case '1' :
+				case '2' :
+				case '3' : 
+				case '4' :
+				case '5' :
+				case '6' : 
+				case '7' :
+				case '8' :
+				case '9' : 
+                    //coloca o numero do input de números 
+                    document.getElementById("numeros"). value +=' ' + caracter;
+                    break;
+                    default:
+                    document.getElementById("letras"). value +=' ' + caracter;
+                    //coloca o restante dos caracteres
+                    break;
+                case '*' :
+                case '=' :
+                case '-' :
+                case '+' :
+                case '/' :
+                case '.' :
+                case ',' :
+                case ';' :
+                case ':' :
+                case '°' :
+                case '?' :
+                case '|' :
+                case '}' :
+                case ']' :
+                case 'º' :
+                case '~' :
+                case '^' :
+                case '{' :
+                case '[' :
+                case 'ª' :
+                case '´' :
+                case '`' :
+                case '"' :
+                case '!' :
+                case '@' :
+                case '#' :
+                case '$' :
+                case '%' :
+                case '¨' :
+                case '&' :
+                case '(' :
+                case ')' :
+                case '_' :
+                case '§' :
+                    document.getElementById("outros"). value +=' ' + caracter;
+                    //coloca o restante dos caracteres
+			}
+			
+		}
+	</script>
+</head>
+<body>
+		<input type="text" name="entrada" id="entrada" placeholder="Digite aqui um Caracter" onkeyup="separaCaracter()">
+		<hr>
+		<span>Letras:</span>
+		<input type="text" name="letras" id="letras" disabled="disabled">
+		<hr>
+		<span>Números :</span>	
+		<input type="text" name="numeros" id= "numeros" disabled="disabled">
+        <hr>
+		<span>Outros :</span>	
+		<input type="text" name="outros" id= "outros" disabled="disabled">
+</body>
+</html>
